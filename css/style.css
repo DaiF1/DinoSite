@@ -1,3 +1,9 @@
+/* Image pre-loading */
+body::after{
+   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+   content:url("../img/dino_idle.png") url("../img/dino_run.png");
+}
+
 #dino-image 
 {
     /* Disable Anti-Aliasing */
@@ -12,7 +18,7 @@
     /* Image */
     height: 128px;
     width: 128px;
-    background: url("img/dino_idle.png") 0px 0px;
+    background: white 0px 0px;
     transform: scaleX(-1);
 
     /* Position */

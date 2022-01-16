@@ -25,6 +25,7 @@ function stopLoop() {
 function mainLoop() {
     spriteSheet.style.backgroundSize = `256px 128px`;
     startAnimation();
+    stopRun();
 
     mainInterval = setInterval(() => {
         if (running) {
@@ -68,7 +69,7 @@ function startRun() {
 
     stopAnimation();
 
-    spriteSheet.style.background = `url("img/dino_run.png") 0px 0px`;
+    spriteSheet.style.background = `url("../img/dino_run.png") 0px 0px`;
     spriteSheet.style.backgroundSize = `512px 128px`;
 
     animSpeed = 100;
@@ -80,7 +81,7 @@ function startRun() {
 function stopRun() {
     stopAnimation();
 
-    spriteSheet.style.background = `url("img/dino_idle.png") 0px 0px`;
+    spriteSheet.style.background = `url("../img/dino_idle.png") 0px 0px`;
     spriteSheet.style.backgroundSize = `256px 128px`;
 
     animSpeed = 200;
