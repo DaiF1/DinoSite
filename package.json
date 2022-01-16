@@ -1,0 +1,23 @@
+{
+  "name": "DinoSite",
+  "version": "1.0.0",
+  "description": "A website with a Dinosaur",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaiF1/DinoSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaiF1/DinoSite/issues"
+  },
+  "homepage": "https://github.com/DaiF1/DinoSite#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
