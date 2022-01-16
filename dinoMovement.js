@@ -51,6 +51,8 @@ function startAnimation() {
 // Animation states
 
 function startRun() {
+    if (running) return;
+
     clearInterval(animationInterval);
     spriteSheet.style.background = `url("img/dino_run.png") 0px 0px`;
     spriteSheet.style.backgroundSize = `512px 128px`;
