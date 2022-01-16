@@ -8,7 +8,7 @@ var spriteSheet = document.getElementById("dino-image");
 var widthSheet = 256;
 var widthSprite = 128;
 
-var animSpeed = 100;
+var animSpeed = 200;
 
 // Stats
 var running = false;
