@@ -5,8 +5,8 @@ var frameduration = 10;
 // Animation Loop
 var animationInterval;
 var spriteSheet = document.getElementById("dino-image");
-var widthSheet = 256;
-var widthSprite = 128;
+var widthSheet = 512;
+var widthSprite = 256;
 
 var animSpeed = 200;
 
@@ -14,7 +14,7 @@ var animSpeed = 200;
 var running = false;
 var leftPos = 0;
 var dir = -1;
-var runSpeed = 5;
+var runSpeed = 8;
 
 // Main Loop
 
@@ -23,7 +23,7 @@ function stopLoop() {
 }
 
 function mainLoop() {
-    spriteSheet.style.backgroundSize = `256px 128px`;
+    spriteSheet.style.backgroundSize = `512px 256px`;
     startAnimation();
     stopRun();
 
@@ -70,10 +70,10 @@ function startRun() {
     stopAnimation();
 
     spriteSheet.style.background = `url("../img/dino_run.png") 0px 0px`;
-    spriteSheet.style.backgroundSize = `512px 128px`;
+    spriteSheet.style.backgroundSize = `1024px 256px`;
 
     animSpeed = 100;
-    widthSheet = 512;
+    widthSheet = 1024;
     running = true;
     startAnimation();
 }
@@ -82,10 +82,10 @@ function stopRun() {
     stopAnimation();
 
     spriteSheet.style.background = `url("../img/dino_idle.png") 0px 0px`;
-    spriteSheet.style.backgroundSize = `256px 128px`;
+    spriteSheet.style.backgroundSize = `512px 256px`;
 
     animSpeed = 200;
-    widthSheet = 256;
+    widthSheet = 512;
     running = false;
     startAnimation();
 }
