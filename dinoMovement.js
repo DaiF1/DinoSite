@@ -1,11 +1,32 @@
+// Main Loop
+var mainInterval;
+
+// Animation Loop
 var animationInterval;
 var spriteSheet = document.getElementById("dino-image");
 var widthSheet = 256;
 var widthSprite = 128;
 
+// Stats
 var running = false;
 var leftPos = 0;
 var dir = -1;
+
+// Main Loop
+
+function stopLoop() {
+    clearInterval(mainInterval);
+}
+
+function mainLoop() {
+    spriteSheet.style.backgroundSize = `256px 128px`;
+    startAnimation();
+
+    mainInterval = setInterval(() => {
+    });
+}
+
+// Animation
 
 function stopAnimation() {
     clearInterval(animationInterval);
@@ -27,6 +48,8 @@ function startAnimation() {
     }, speed);
 }
 
+// Animation states
+
 function startRun() {
     clearInterval(animationInterval);
     spriteSheet.style.background = `url("img/dino_run.png") 0px 0px`;
@@ -45,6 +68,7 @@ function stopRun() {
     startAnimation();
 }
 
+// Key Detection
 
 function onKeyDown(e) {
     if (e.code == 'KeyA') {
@@ -65,3 +89,5 @@ function onKeyUp(e) {
 
 document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
+
+mainLoop()
