@@ -1,5 +1,6 @@
 // Main Loop
 var mainInterval;
+var frameduration = 10;
 
 // Animation Loop
 var animationInterval;
@@ -11,6 +12,7 @@ var widthSprite = 128;
 var running = false;
 var leftPos = 0;
 var dir = -1;
+var runSpeed = 5;
 
 // Main Loop
 
@@ -23,7 +25,17 @@ function mainLoop() {
     startAnimation();
 
     mainInterval = setInterval(() => {
-    });
+        if (running) {
+            leftPos += runSpeed * -dir;
+            if (leftPos < 0) {
+                leftPos = 0;
+            } else if (leftPos > window.screen.width - widthSprite) {
+                leftPos = window.screen.width - widthSprite;
+            }
+
+            spriteSheet.style.left = `${leftPos}px`;
+        }
+    }, frameduration);
 }
 
 // Animation
