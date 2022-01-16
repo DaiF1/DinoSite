@@ -8,6 +8,8 @@ var spriteSheet = document.getElementById("dino-image");
 var widthSheet = 256;
 var widthSprite = 128;
 
+var animSpeed = 100;
+
 // Stats
 var running = false;
 var leftPos = 0;
@@ -46,7 +48,6 @@ function stopAnimation() {
 
 function startAnimation() {
     var position = widthSprite;
-    const speed = 100;
     const diff = widthSprite;
 
     animationInterval = setInterval(() => {
@@ -57,7 +58,7 @@ function startAnimation() {
         } else {
             position = widthSprite;
         }
-    }, speed);
+    }, animSpeed);
 }
 
 // Animation states
@@ -65,18 +66,24 @@ function startAnimation() {
 function startRun() {
     if (running) return;
 
-    clearInterval(animationInterval);
+    stopAnimation();
+
     spriteSheet.style.background = `url("img/dino_run.png") 0px 0px`;
     spriteSheet.style.backgroundSize = `512px 128px`;
+
+    animSpeed = 100;
     widthSheet = 512;
     running = true;
     startAnimation();
 }
 
 function stopRun() {
-    clearInterval(animationInterval);
+    stopAnimation();
+
     spriteSheet.style.background = `url("img/dino_idle.png") 0px 0px`;
     spriteSheet.style.backgroundSize = `256px 128px`;
+
+    animSpeed = 200;
     widthSheet = 256;
     running = false;
     startAnimation();
