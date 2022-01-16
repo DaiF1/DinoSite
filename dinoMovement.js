@@ -74,12 +74,12 @@ function onKeyDown(e) {
     if (e.code == 'KeyA') {
         spriteSheet.style.transform = `scaleX(1)`;
         dir = 1;
-        run();
+        startRun();
     }
     else if (e.code == 'KeyD') {
         spriteSheet.style.transform = `scaleX(-1)`;
         dir = -1;
-        run();
+        startRun();
     }
 }
 
