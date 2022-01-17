@@ -110,12 +110,12 @@ function stopRun() {
 function onKeyDown(e) {
     if (!gameBegin) return;
 
-    if (e.code == 'KeyA') {
+    if (e.key == 'a') {
         spriteSheet.style.transform = `scaleX(1)`;
         dir = 1;
         startRun();
     }
-    else if (e.code == 'KeyD') {
+    else if (e.key == 'd') {
         spriteSheet.style.transform = `scaleX(-1)`;
         dir = -1;
         startRun();

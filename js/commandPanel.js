@@ -38,7 +38,7 @@ function fadeOut()
 function onKeyDown(e) {
     if (fadeOutStarted && !fadeInEnded) return;
 
-    if (e.code == 'KeyA' || e.code == 'KeyD') {
+    if (e.key == 'a' || e.key == 'd') {
         fadeOut();
         fadeOutStarted = true;
     }
