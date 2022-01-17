@@ -48,6 +48,7 @@ body::after{
     border: solid #12130F 3pt;
     border-radius: 10pt;
     background-color: bisque;
+    opacity: 0;
 
     /* Box position */
     position: absolute;
