@@ -12,9 +12,28 @@ var animSpeed = 200;
 
 // Stats
 var running = false;
-var leftPos = 190;
+var leftPos = -260;
 var dir = -1;
 var runSpeed = 8;
+
+// Intro Cinematic
+var gameBegin = false;
+
+function intro() {
+    var interval;
+    startRun();
+
+    interval = setInterval(() => {
+        leftPos += runSpeed;
+        spriteSheet.style.left = `${leftPos}px`;
+        if (leftPos >= 190) {
+            gameBegin = true;
+            stopRun();
+            mainLoop();
+            clearInterval(interval);
+        }
+    }, 10);
+}
 
 // Main Loop
 
@@ -23,10 +42,6 @@ function stopLoop() {
 }
 
 function mainLoop() {
-    spriteSheet.style.backgroundSize = `512px 256px`;
-    startAnimation();
-    stopRun();
-
     mainInterval = setInterval(() => {
         if (running) {
             leftPos += runSpeed * -dir;
@@ -93,6 +108,8 @@ function stopRun() {
 // Key Detection
 
 function onKeyDown(e) {
+    if (!gameBegin) return;
+
     if (e.code == 'KeyA') {
         spriteSheet.style.transform = `scaleX(1)`;
         dir = 1;
@@ -106,10 +123,11 @@ function onKeyDown(e) {
 }
 
 function onKeyUp(e) {
+    if (!gameBegin) return;
     stopRun();
 }
 
 document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
 
-mainLoop()
+intro()
