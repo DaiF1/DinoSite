@@ -12,7 +12,7 @@ var animSpeed = 200;
 
 // Stats
 var running = false;
-var leftPos = 0;
+var leftPos = 190;
 var dir = -1;
 var runSpeed = 8;
 
