@@ -68,4 +68,5 @@ body::after{
     height: 128px;
     position: absolute;
     top: 548px;
+    left: 0px;
 }
