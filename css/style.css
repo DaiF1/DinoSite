@@ -7,7 +7,7 @@ body::after{
    content:url("../img/dino_idle.png") url("../img/dino_run.png");
 }
 
-#dino-image 
+.sprite
 {
     /* Disable Anti-Aliasing */
     image-rendering: optimizeSpeed;
@@ -17,7 +17,10 @@ body::after{
     image-rendering: pixelated;
     image-rendering: optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor; 
+}
 
+#dino-image 
+{
     /* Image */
     height: 256px;
     width: 256px;
@@ -54,4 +57,10 @@ body::after{
     position: absolute;
     top: 250px;
     left: 650px;
+}
+
+#ground
+{
+    background: url("../img/ground.png") repeat-x;
+    background-size: 128px 128px;
 }
