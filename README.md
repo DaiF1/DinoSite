@@ -2,4 +2,6 @@
 A website with a Dinosaur
 
 Well, it's a web site...
-And it has a cute dinosaur in it...
+But it has a cute dinosaur in it!
+
+You can visit it [here](http://thedinosite.tk)
