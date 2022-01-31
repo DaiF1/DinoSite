@@ -59,14 +59,23 @@ body::after{
     left: 650px;
 }
 
+#groundcontainer
+{
+    background-color: #986a44;
+
+    width: 100%;
+    height: 34%;
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
 #ground
 {
     background: url("../img/ground.png") repeat-x;
     background-size: 128px 128px;
    
     width: 100%;
-    height: 128px;
-    position: absolute;
-    top: 548px;
-    left: 0px;
+    height: 128px; 
 }
