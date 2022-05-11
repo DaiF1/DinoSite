@@ -14,14 +14,22 @@ class Sprite
     {
         this.position = position
         this.velocity = velocity
-        this.height = 50
         this.onGround = false
+        this.image = new Image()
+        this.image.src = "../img/dino_idle.png"
+        this.height = this.image.height * 4
     }
 
     draw() 
     {
-        c.fillStyle = 'red'
-        c.fillRect(this.position.x, this.position.y, 50, this.height)
+        //c.fillStyle = 'red'
+        //c.fillRect(this.position.x, this.position.y, 50, this.height)
+        c.imageSmoothingEnabled = false
+        c.drawImage(this.image, 
+            0, 0, this.image.width / 2, this.image.height,
+            this.position.x, this.position.y, 
+            this.image.width * 2, this.image.height * 4
+        )
     }
 
     jump()
