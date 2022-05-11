@@ -16,7 +16,7 @@ class Sprite
         this.velocity = velocity
         this.onGround = false
         this.image = new Image()
-        this.image.src = "../img/dino_idle.png"
+        this.image.src = "img/dino_idle.png"
         this.height = this.image.height * 4
     }
 
