@@ -8,56 +8,7 @@ c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.4
 
-class Sprite 
-{
-    constructor({position, velocity})
-    {
-        this.position = position
-        this.velocity = velocity
-        this.onGround = false
-        this.image = new Image()
-        this.image.src = "img/dino_idle.png"
-        this.scale = 4
-        this.nbFrames = 2
-        this.height = this.image.height * this.scale
-    }
-
-    draw() 
-    {
-        if (this.height == 0)
-            this.height = this.image.height * this.scale
-
-        c.imageSmoothingEnabled = false
-        c.drawImage(this.image, 
-            0, 0, this.image.width / this.nbFrames, this.image.height,
-            this.position.x, this.position.y, 
-            (this.image.width / this.nbFrames) * this.scale, this.height
-        )
-    }
-
-    jump()
-    {
-        this.velocity.y = -12
-        this.onGround = false
-    }
-
-    update()
-    {
-        this.draw()
-        this.velocity.y += gravity
-        this.position.y += this.velocity.y
-        this.position.x += this.velocity.x
-
-        if (this.position.y + this.height + this.velocity.y >= canvas.height)
-        {
-            this.velocity.y = 0
-            this.position.y = canvas.height - this.height
-            this.onGround = true
-        }
-    }
-}
-
-const dino = new Sprite({
+const dino = new Dino({
     position: {
         x: 0,
         y: 0
@@ -65,10 +16,9 @@ const dino = new Sprite({
     velocity: {
         x: 0,
         y: 0
-    }
+    },
+    imgSrc: "img/dino_idle.png"
 })
-
-dino.draw()
 
 const keys = {
     a: {
