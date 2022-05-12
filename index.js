@@ -17,18 +17,21 @@ class Sprite
         this.onGround = false
         this.image = new Image()
         this.image.src = "img/dino_idle.png"
-        this.height = this.image.height * 4
+        this.scale = 4
+        this.nbFrames = 2
+        this.height = this.image.height * this.scale
     }
 
     draw() 
     {
-        //c.fillStyle = 'red'
-        //c.fillRect(this.position.x, this.position.y, 50, this.height)
+        if (this.height == 0)
+            this.height = this.image.height * this.scale
+
         c.imageSmoothingEnabled = false
         c.drawImage(this.image, 
-            0, 0, this.image.width / 2, this.image.height,
+            0, 0, this.image.width / this.nbFrames, this.image.height,
             this.position.x, this.position.y, 
-            this.image.width * 2, this.image.height * 4
+            (this.image.width / this.nbFrames) * this.scale, this.height
         )
     }
 
