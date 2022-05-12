@@ -11,13 +11,35 @@ const gravity = 0.4
 const dino = new Dino({
     position: {
         x: 0,
-        y: 0
+        y: canvas.height
     },
     velocity: {
         x: 0,
         y: 0
     },
-    imgPrefix: "img/dino_idle_"
+    imgSrc: "img/dino_idle_left.png",
+    nbFrames: 2,
+    frameDuration: 10,
+    sprites: {
+        idle: {
+            imgSrcLeft: "img/dino_idle_left.png",
+            imgSrcRight: "img/dino_idle_right.png",
+            nbFrames: 2,
+            frameDuration: 10
+        },
+        run: {
+            imgSrcLeft: "img/dino_run_left.png",
+            imgSrcRight: "img/dino_run_right.png",
+            nbFrames: 2,
+            frameDuration: 5
+        },
+        jump: {
+            imgSrcLeft: "img/dino_jump_left.png",
+            imgSrcRight: "img/dino_jump_right.png",
+            nbFrames: 1,
+            frameDuration: 0
+        }
+    }
 })
 
 const keys = {
@@ -63,33 +85,37 @@ function mainloop()
     c.fillRect(0, 0, canvas.width, canvas.height)
     dino.update()
 
+    if (getkey(keys.w) && dino.onGround)
+        dino.jump()
+
     if (getkeydown(keys.a))
     {
         dino.velocity.x = -5
-        dino.image.src = dino.imgPrefix + "right.png"
+        dino.switchAnimation(dino.sprites.run, false)
     }
     else if (getkeyup(keys.a) && dino.velocity.x < 0)
     {
         dino.velocity.x = 5 * + getkey(keys.d)
         if (getkey(keys.d))
-            dino.image.src = dino.imgPrefix + "left.png"
+            dino.switchAnimation(dino.sprites.run, true)
+        else
+            dino.switchAnimation(dino.sprites.idle, false)
     }
 
     if (getkeydown(keys.d))    
     {
         dino.velocity.x = 5
-        dino.image.src = dino.imgPrefix + "left.png"
+        dino.switchAnimation(dino.sprites.run, true)
     }
 
     else if (getkeyup(keys.d) && dino.velocity.x > 0)
     {
         dino.velocity.x = -5 * + getkey(keys.a)
         if (getkey(keys.a))
-            dino.image.src = dino.imgPrefix + "right.png"
-    }
-
-    if (getkey(keys.w) && dino.onGround)
-        dino.jump()
+            dino.switchAnimation(dino.sprites.run, false)
+        else
+            dino.switchAnimation(dino.sprites.idle, true)
+    } 
 }
 
 mainloop()
