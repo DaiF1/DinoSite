@@ -1,7 +1,7 @@
 /* Image pre-loading */
 body::after{
    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-   content:url("../img/dino_idle.png") url("../img/dino_run.png");
+   content:url("../img/dino_idle_left.png") url("../img/dino_idle_right.png");
 }
 
 /* Center canvas */
