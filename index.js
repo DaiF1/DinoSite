@@ -69,7 +69,11 @@ function mainloop()
         dino.image.src = dino.imgPrefix + "right.png"
     }
     else if (getkeyup(keys.a) && dino.velocity.x < 0)
+    {
         dino.velocity.x = 5 * + getkey(keys.d)
+        if (getkey(keys.d))
+            dino.image.src = dino.imgPrefix + "left.png"
+    }
 
     if (getkeydown(keys.d))    
     {
@@ -78,7 +82,11 @@ function mainloop()
     }
 
     else if (getkeyup(keys.d) && dino.velocity.x > 0)
-        dino.velocity.x = -5 * + getkey(keys.a)
+    {
+        dino.velocity.x = 5 * + getkey(keys.a)
+        if (getkey(keys.a))
+            dino.image.src = dino.imgPrefix + "right.png"
+    }
 
     if (getkey(keys.w) && dino.onGround)
         dino.jump()
