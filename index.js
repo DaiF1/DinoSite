@@ -83,7 +83,7 @@ function mainloop()
 
     else if (getkeyup(keys.d) && dino.velocity.x > 0)
     {
-        dino.velocity.x = 5 * + getkey(keys.a)
+        dino.velocity.x = -5 * + getkey(keys.a)
         if (getkey(keys.a))
             dino.image.src = dino.imgPrefix + "right.png"
     }
