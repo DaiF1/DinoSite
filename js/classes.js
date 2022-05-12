@@ -26,11 +26,13 @@ class Sprite
 
 class Dino extends Sprite
 {
-    constructor({position, velocity, imgSrc})
+    constructor({position, velocity, imgPrefix})
     {
+        const imgSrc = imgPrefix + "left.png"
         super({position, imgSrc})
         this.velocity = velocity
         this.onGround = false
+        this.imgPrefix = imgPrefix
     }
 
     jump()

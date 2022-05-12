@@ -17,7 +17,7 @@ const dino = new Dino({
         x: 0,
         y: 0
     },
-    imgSrc: "img/dino_idle.png"
+    imgPrefix: "img/dino_idle_"
 })
 
 const keys = {
@@ -64,12 +64,19 @@ function mainloop()
     dino.update()
 
     if (getkeydown(keys.a))
+    {
         dino.velocity.x = -5
+        dino.image.src = dino.imgPrefix + "right.png"
+    }
     else if (getkeyup(keys.a) && dino.velocity.x < 0)
         dino.velocity.x = 5 * + getkey(keys.d)
 
-    if (getkeydown(keys.d))
+    if (getkeydown(keys.d))    
+    {
         dino.velocity.x = 5
+        dino.image.src = dino.imgPrefix + "left.png"
+    }
+
     else if (getkeyup(keys.d) && dino.velocity.x > 0)
         dino.velocity.x = -5 * + getkey(keys.a)
 
