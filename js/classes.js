@@ -1,11 +1,11 @@
 class Sprite 
 {
-    constructor({position, imgSrc, nbFrames=1, frameDuration=0})
+    constructor({position, scale, imgSrc, nbFrames=1, frameDuration=0})
     {
         this.position = position
         this.image = new Image()
         this.image.src = imgSrc
-        this.scale = 5
+        this.scale = scale
 
         this.nbFrames = nbFrames
         this.frameElapsedTime = 0
@@ -36,9 +36,9 @@ class Sprite
 
 class Dino extends Sprite
 {
-    constructor({position, velocity, imgSrc, nbFrames=1, frameDuration=0, sprites})
+    constructor({position, scale, velocity, imgSrc, nbFrames=1, frameDuration=0, sprites})
     {
-        super({position, imgSrc, nbFrames, frameDuration})
+        super({position, scale, imgSrc, nbFrames, frameDuration})
         this.velocity = velocity
         this.onGround = false
 
