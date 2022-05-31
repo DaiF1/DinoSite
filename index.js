@@ -4,8 +4,6 @@ const c = canvas.getContext('2d')
 canvas.width = screen.width / 2
 canvas.height = screen.width / 2 * 9 / 16
 
-const scaleFactor = canvas.width / canvas.height
-
 c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.4
@@ -15,7 +13,7 @@ const dino = new Dino({
         x: 0,
         y: canvas.height
     },
-    scale: scaleFactor * 2,
+    scale: canvas.width / 200,
     velocity: {
         x: 0,
         y: 0
