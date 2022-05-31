@@ -2,7 +2,7 @@ const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = screen.width / 2
-canvas.height = screen.height / 2
+canvas.height = screen.width / 2 * 9 / 16
 
 const scaleFactor = canvas.width / canvas.height
 
