@@ -120,3 +120,16 @@ class Dino extends Sprite
         }
     }
 }
+
+class Platform extends Sprite
+{
+    constructor({position, imgSrc, nbFrames=1, frameDuration=0})
+    {
+        super({position, imgSrc, nbFrames, frameDuration})
+    }
+
+    collide(other)
+    {
+        return false
+    }
+}
